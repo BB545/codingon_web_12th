@@ -1,0 +1,38 @@
+/* *:전체 선택자 */
+* {
+    color: navy;
+}
+
+/* 태그 선택자 */
+h1 {
+    background-color: pink;
+}
+
+li {
+    background-color: aliceblue;
+}
+
+/* .클래스명: 클래스 선택자 */
+.second {
+    background-color: aquamarine;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.big {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* #id명: id 선택자 */
+#first {
+    background-color: lightgreen;
+}
+
+/* 
+class vs id
+- class: 그룹 (특정 클래스 값은 여러번 쓰일 수 있음)
+- id: 고유 (특정 아이디 값을 한 번만 쓰여야 함)
+*/
