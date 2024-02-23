@@ -33,3 +33,13 @@ body section h2 {
 #kong ~ li {
     color: red;
 }
+
+/* CSS 색상 표현 방식 
+    1. 색상 키워드: black, red...
+    2. 16진수 코드(hex color): #xxxxxx
+        *16진수: 0~9, a, b, c, d, e, f 기호로 숫자 표현
+        ex. #000000: black (red(00), green(00), blue(00)) 
+            #ffffff: white (red(ff), green(ff), blue(ff))
+    3. rgb(0~255, 0~255, 0~255)
+        ex. rgb(255, 255, 255): white / rgb(0, 0, 0): black
+*/
