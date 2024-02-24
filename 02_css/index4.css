@@ -30,3 +30,29 @@ input:focus {
 .links > a:visited {
     color: #ccc;
 }
+
+/* 요소 상황에 따른 가상 선택자 */
+.zoo > * {
+    background-color: green;
+    color: white;
+}
+
+/* E:last-child : E가 마지막 요소라면 */
+.zoo > li:last-child {
+    background-color: black;
+}
+
+/* E:first-child : EE가 첫번째 요소라면 */
+.zoo > *:first-child {
+    background-color: red;
+}
+
+/* E:not(xyz) : xyz가 아닌 요소 선택 */
+.zoo > *:not(div) {
+    background-color: pink;
+}
+
+/* E:nth-child(n) : E가 n번째 요소라면 선택 */
+.zoo > *:nth-child(2) {
+    background-color: aqua;
+}
