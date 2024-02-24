@@ -56,3 +56,33 @@ input:focus {
 .zoo > *:nth-child(2) {
     background-color: aqua;
 }
+
+/* 가상요소 선택자 */
+/* 마우스를 올렸을 때만 추가하는 것도 가능하다 */
+.box:hover::before {
+    content: "택시~";
+    color: red;
+}
+
+.box::after {
+    content: "빨리!!";
+    color: blue;
+}
+
+/* 동일한 꾸밈을 여러 요소에 해야할 경우 쉼표로 구분하여 동시에 적용해줄 수 있다 */
+.box::after, .box::before {
+    font-weight: bold;
+}
+
+/* 속성 선택자 */
+[disabled] {
+    background-color: darkgrey;
+}
+
+[placeholder="이름"] {
+    background-color: orange;
+}
+
+input:not([placeholder]) {
+    background-color: skyblue;
+}
