@@ -1,0 +1,37 @@
+.div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.div:hover {
+    visibility: hidden;
+}
+
+h2 {
+    text-align: center;
+}
+
+#name:focus, #user-email:focus {
+    background-color: lightcyan;
+}
+
+label:hover {
+    color: blue;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+button:hover {
+    background-color: darkgray;
+}
+
+.form {
+    background-color: antiquewhite;
+    border-radius: 30px;
+    padding: 20px;
+}
