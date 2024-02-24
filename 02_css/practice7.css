@@ -1,0 +1,16 @@
+body {
+    background-color: beige;
+}
+
+div {
+    width: calc(10vw);
+    height: calc(10vh);
+    background-color: blue;
+    margin: 50% 50%;
+    text-align: center;
+}
+
+span {
+    color: white;
+    line-height: 10vh;
+}
