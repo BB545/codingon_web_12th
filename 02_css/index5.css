@@ -36,6 +36,9 @@ div {
 
     border-radius: 0 50px;
 
+    /* visibility 속성값: hidden, visible */
+    /* visibility: hidden; */
+    visibility: visible;
 }
 
 p {
