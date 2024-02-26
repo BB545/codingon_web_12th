@@ -1,0 +1,24 @@
+.box {
+    width: 500px;
+    height: 500px;
+    background-color: #ccc;
+
+    background-image: url("https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a");
+    
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+
+    background-position: center;
+    /* background-position: bottom right; */
+    /* background-position: 50% 30px; */
+
+    /* background-size: 100px; */
+    /* background-size: 500px; */
+    /* background-size: 100PX 150px; */
+    /* background-size: cover; */
+
+    width: 100px;
+    height: 200px;
+    background-size: contain;
+}
