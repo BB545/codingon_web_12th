@@ -1,0 +1,28 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: pink;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.box1 {
+    background-color: red;
+    /* z-index: 3; */
+}
+
+.box2 {
+    top: 30px;
+    left: 30px;
+    background-color: orange;
+}
+
+.box3 {
+    top: 60px;
+    left: 60px;
+    background-color: yellow;
+}
