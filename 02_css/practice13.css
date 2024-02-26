@@ -1,0 +1,22 @@
+div {
+    width: 150px;
+    height: 150px;
+    margin: 0 30px 0 0;
+    border: 1px solid #aaa;
+}
+
+.grad-1 {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 3%, rgba(114,9,121,1) 47%, rgba(0,212,255,1) 93%);
+}
+
+.grad-2 {
+    background: linear-gradient(0deg, rgba(39,217,219,1) 29%, rgba(253,187,45,1) 100%);
+}
+
+.grad-3 {
+    background: radial-gradient(circle, rgba(238,174,202,1) 8%, rgba(148,187,233,1) 100%);
+}
+
+.grad-4 {
+    background: linear-gradient(41deg, rgba(2,0,36,1) 23%, rgba(35,235,133,1) 67%);
+}
