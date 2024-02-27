@@ -1,0 +1,22 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+
+    /* 1초 기다렸다가 width 속성을 3초동안 변경 시켜 주세요~ */
+    /* transition-property: width;
+    transition-duration: 3s;
+    transition-delay: 1s; */
+
+    transition-property: width;
+    transition-duration: 1s;
+    /* transition-timing-function: linear; */
+    /* transition-timing-function: ease; */
+    /* transition-timing-function: ease-in; */
+    /* transition-timing-function: ease-out; */
+    /* transition-timing-function: ease-in-out; */
+}
+
+div:hover {
+    width: 300px;
+}
