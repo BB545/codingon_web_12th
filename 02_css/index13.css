@@ -85,3 +85,37 @@
     background-color: blue;
     font-size: 24px;
   }
+
+
+  /* 요소 안에 요소를 정가운데 배치하는 방법 */
+  .outer {
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+  }
+
+  .inner {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+
+  /* case 1. position, transform */
+  .outer1 {
+    position: relative;
+  }
+
+  .inner1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* 자기사이즈의 절반씩을 움직이는 속성: transform. 반대로 움직여야할땐 -붙여줌 */
+    transform: translate(-50%, -50%);
+  }
+
+  /* case2. flex => 좀 더 간결해질 때가 많음. 상황에 따라 case별로 사용하면 된다. */
+  .outer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
