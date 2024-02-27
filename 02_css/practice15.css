@@ -1,0 +1,60 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: #ccc;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* align-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* flex-direction: column; */
+}
+
+.div {
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+}
+
+.div1 {
+    background-color: red;
+}
+
+.div2 {
+    background-color: orange;
+}
+
+.div3 {
+    background-color: yellow;
+}
+
+.div4 {
+    background-color: red;
+}
+
+.div5 {
+    background-color: orange;
+}
+
+.div6 {
+    background-color: yellow;
+}
+
+.div7 {
+    background-color: green;
+}
+
+.div8 {
+    background-color: blue;
+}
+
+.div9 {
+    background-color: navy;
+}
+
+.div10 {
+    background-color: purple;
+}
+
+.div11 {
+    background-color: pink;
+}
