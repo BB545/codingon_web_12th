@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS and CSS preload example</title>
+
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="main.js" as="script">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <!-- script실행하려면 canvas라는 태그를 읽어야하는데 head에서는 읽을 수 없기때문에 실행안됨 -->
+    <!-- 그러나 defer를 써주면 모든 html코드를 읽은 후 실행이 되므로 실해이 잘 됨 -->
+  </head>
+
+  <body>
+    <h1>bouncing balls</h1>
+    <canvas></canvas>
+    <!-- canvas태그 읽을 수 있으므로 실행 됨 -->
+    <!-- <script src="main.js"></script> -->
+  </body>
+</html>
