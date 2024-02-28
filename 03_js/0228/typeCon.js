@@ -10,3 +10,6 @@ console.log('99'+1); //문자+숫자=옆에 이어져서 출력됨
 console.log(typeof parseInt('0')); //'0'은 문자열이지만 parseInt=정수형으로 변경하는 함수
 console.log(typeof parseFloat('0')); //parseFloat=실수형으로 변경
 console.log((99).toString() + 1); //toString=문자열로 변경
+
+//js 위치 변경
+console.log('body에서 head로 옮겼어요');
