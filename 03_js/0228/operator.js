@@ -74,3 +74,9 @@ let userColor = undefined;
 let defaultColor = 'blue';
 let currentColor = userColor||defaultColor; //user값이 없으면 default값이 반환
 console.log('현재 컬러는: ', currentColor); //결과=red
+
+//삼항연산자
+let points=110;
+let type = points > 100 ? "gold" : "silver";
+//let x=10;과 같은 형태지만 식을 값으로 주는 것일뿐
+console.log(type);
