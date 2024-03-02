@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">  여기   에는 내 용 </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex dolores atque dolor placeat aperiam minima impedit, eveniet quas hic. Veritatis.</p>
+    <script>
+        //interHtml, interText, textContent
+        // let txt=document.getElementById('demo');
+        // let txt=document.getElementById('demo').innerText; //콘텐츠 내용만(공백x-공백은 하나만 출력됨)
+        // let txt=document.getElementById('demo').textContent; //콘텐츠 내용만 출력(공백까지 그대로 출력)
+        // console.log(txt)
+        // document.getElementById('demo').innerHtml="<i> 아이콘 </i>" //태그를 문자가 아니라 태그 그대로 인식
+        // document.getElementById('demo').innerText="<i> 아이콘 </i>" //태그를 문자로 인식
+        // document.getElementsByTagName('p')[0].innerText="홍길동"
+    </script>
+
+    <h2>메뉴를 만들어봅시다.</h2>
+
+    <script>
+        let ul=document.createElement('ul');
+        for(let i=0; i<5; i++){
+            let li=document.createElement('li')
+            li.innerText="Menu"+i;
+            // console.log(li)
+            ul.appendChild(li) //DOM트리 만들기 위해 구조를 형성해주는 것
+            // console.log(ul)
+            // document.write(li)
+        }
+        document.body.appendChild(ul) //DOM트리 만들기 위해 구조를 형성해주는 것
+    </script>
+</body>
+</html>
