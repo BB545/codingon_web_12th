@@ -5,5 +5,5 @@ let student=[
     {"name": '형준', "score": 75},
 ]
 for (let i=0; i<4; i++) {
-    console.log(student[i]["score"])
+    console.log(student[i]["score"]) //2차원 배열이기에 값으로 줘야지만 정상 실행된다.
 }
