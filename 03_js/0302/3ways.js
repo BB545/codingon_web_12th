@@ -33,3 +33,4 @@ function Person(name,age){
 }
 let person3=new Person('Willy', 28)
 console.log(person3)
+//3번째의 모양은 클래스와 비슷하다.
