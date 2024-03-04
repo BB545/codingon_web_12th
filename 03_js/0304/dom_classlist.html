@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+        #green {
+            background-color: green;
+        }
+        #red {
+            background-color: red;
+        }
+        .d-none {
+            opacity: 0.5;
+        }
+        .box1 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="green">1</div>
+        <div class="box" id="red">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <button onclick="addClass()">addClass</button>
+    <button onclick="removeClass()">removeClass</button>
+    <button onclick="containsClass()">containsClass</button>
+    <button onclick="toggleClass()">toggleClass</button>
+    <button onclick="addClass1()">addClass1</button>
+    <input type="text" name="username" id="username">
+    <script>
+        let greenBox = document.getElementById('green');
+        let inputBox = document.getElementById('username');
+        //greenBox를 여러 함수에서 사용하고자 전역변수로 선언함
+        console.log(greenBox.classList)
+        function addClass() {
+            greenBox.classList.add('box1')
+            console.log(greenBox.classList)
+        }
+
+        function removeClass() {
+            greenBox.classList.remove('box1')
+        }
+
+        function containsClass() {
+            console.log(greenBox.classList.contains('box1'))
+        }
+
+        function toggleClass() {
+            greenBox.classList.toggle('box1')
+        }
+
+        function addClass1() {
+            inputBox.classList.add('box1')
+            console.log(inputBox.classList)
+        }
+    </script>
+</body>
+</html>

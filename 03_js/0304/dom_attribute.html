@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            background-color: gold;
+        }
+        .democlass {
+            text-decoration: underline;
+            background-color: orange;
+        }
+        .section1 {
+            font-size: 1.5rem;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="div1" style="background-color: red; text-align: center;">div</div>
+    <script>
+        let div1 = document.getElementById('div1');
+        //get, attribute -> 속성가져오기
+        let mystyle = div1.getAttribute('style');
+        console.log(mystyle)
+    </script> -->
+    <h1 id="myH1" class="mystyle">The Element Object</h1>
+    <p id="section1"></p>
+    <div class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, inventore.</div>
+    <button onclick="myS()">Add Class</button>
+    <script>
+        // const elem = document.getElementById('myH1');
+        // let txt = elem.getAttribute('class');
+        // let x = document.getElementById('section1');
+        // x.innerText=txt;
+        // 위와 같은 내용임. 체이닝 방식으로 단축시켜줌
+        let txt = document.getElementById('myH1').getAttribute('class');
+        let x = document.getElementById('section1').innerText=txt;
+
+        // setAttribute(a,b) => a를 b로 바꿔라
+        // function myF() {
+        //     document.getElementById('myH1').setAttribute('class', 'democlass')
+        // }
+
+        function myS() {
+            document.getElementsByClassName('demo')[0].setAttribute('class', 'section1')
+        }
+    </script>
+</body>
+</html>
