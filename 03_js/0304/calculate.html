@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기 실습</title>
+</head>
+<body>
+    <form action="">
+        <label for="value1">값1:</label><input type="text" id="value1">
+        <br>
+        <label for="value2">값2:</label><input type="text" id="value2">
+        <br>
+        <label for="oper">연산자:</label><input type="text" id="oper">
+        <br>
+        <label for="result">결과:</label><input type="text" id="result">
+        <br>
+        <br>
+        <button type="submit" onclick="calc()">계산하기</button>
+        <button type="submit" onclick="reset()">초기화</button>
+    </form>
+    <script>
+        function calc(){
+            event.preventDefault();
+            let value1 = document.getElementById('value1').value;
+            let value2 = document.getElementById('value2').value;
+            let operator = document.getElementById('oper').value;
+
+            if (operator==='+'){
+                let result = Number(value1)+Number(value2);
+                document.getElementById('result').value=result;
+            }
+            else if(operator==='-'){
+                let result = Number(value1)-Number(value2);
+                document.getElementById('result').value=result;
+            }
+            else if(operator==='*'){
+                let result = Number(value1)*Number(value2);
+                document.getElementById('result').value=result;
+            }
+            else if(operator==='/'){
+                let result = Number(value1)/Number(value2);
+                document.getElementById('result').value=result;
+            }
+            else if(operator==='%'){
+                let result = Number(value1)%Number(value2);
+                document.getElementById('result').value=result;
+            }
+            else{
+                document.getElementById('result').value='연산자가 잘못되었습니다.';
+            }
+        }
+
+        function reset(){
+            document.getElementById('value1').value='';
+            document.getElementById('value2').value='';
+            document.getElementById('oper').value='';
+            document.getElementById('result').value='';
+        }
+    </script>
+</body>
+</html>
