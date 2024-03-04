@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- action=서버쪽 받은 파일, method=GRT, POST 중 하나 -->
+    <form action="" method="" onsubmit="login()">
+        <div>
+            <label for="email">이메일</label>
+            <input type="email" name="" id="email" required />
+        </div>
+        <div>
+            <label for="pw">비밀번호</label>
+            <input type="password" name="" id="pw" required oninvalid="this.setCustomValidity('비밀번호를 입력하세요.')" />
+        </div>
+        <button type="submit">로그인</button>
+    </form>
+    <!-- POST : 화면에 노출x
+        GET : url에 내용 노출
+    -->
+    <script>
+        function login() {
+            event.preventDefault(); //기본기능인 버튼의 타입 submit기능을 막아주지 않으면 자동으로 서버로 전달이 되기 떄문에 콘솔창에 찍히지 않음
+            // console.log('보내기')
+            const email = document.querySelector('#email').value;
+            const pw = document.querySelector('#pw').value;
+            // console.log(email,pw)
+            if(!email.checkValidity()) {
+                return alert(email.validationMessage);
+            }
+            if(!pw.checkValidity()) {
+                return alert(pw.validationMessage);
+            }
+        }
+        // setCustomValidity는 엘리먼트 인터페이스의 요소에 대한 사용자 지정 유효성 메시지를 설정한다.
+    </script>
+</body>
+</html>

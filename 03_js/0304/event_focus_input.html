@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:focus {
+            border: 5px dotted green;
+        }
+    </style>
+</head>
+<body>
+    <h2>focus 이벤트</h2>
+    <input type="text" onfocus="myF()">
+    <script>
+        function myF() {
+            console.log('input을 클릭하셨군요.')
+        }
+    </script>
+
+    <div>
+        <label for="number">숫자만 입력 가능한 필드</label>
+        <!-- target이 가지고 있는 값 -->
+        <input type="text" name="" id="number" oninput="onlyNumber();" />
+    </div>
+    <div>
+        <label for="lowercase">소문자만 입력 가능한 필드</label>
+        <input type="text" name="" id="lowercase" oninput="onlyLowercase();" />
+    </div>
+    <div>
+        <label for="uppercase">대문자만 입력 가능한 필드</label>
+        <input type="text" name="" id="uppercase" oninput="onlyUppercase();" />
+    </div>
+    <div>
+        <label for="korean">한글만 입력 가능한 필드</label>
+        <input type="text" name="" id="korean" oninput="onlyKorean();" />
+    </div>
+
+    <script>
+        //키보드 이벤트 -> keydown -> keypress -> keyup
+        function onlyNumber() {
+            const regexp = /\D/g;
+            console.log(event.target.value); //event는 동작을 기억하고 있음. 그 동작을 event로 받겠다. 사용자 입력값을 value가 가지고 있음
+            event.target.value = event.target.value.replace(regexp,"");
+        }
+
+        function onlyLowercase() {
+            const regexp = /[^a-z]/g;
+            console.log(event.target.value);
+            event.target.value = event.target.value.replace(regexp,"");
+        }
+
+        function onlyUppercase() {
+            const regexp = /[^A-Z]/g;
+            console.log(event.target.value);
+            event.target.value = event.target.value.replace(regexp,"");
+        }
+
+        function onlyKorean() {
+            const regexp = /[^ㄱ-ㅎ | ㅏ-ㅣ | 가-힣]/g;
+            console.log(event.target.value);
+            event.target.value = event.target.value.replace(regexp,"");
+        }
+    </script>
+</body>
+</html>
