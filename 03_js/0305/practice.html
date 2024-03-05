@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        div:hover {
+            cursor: pointer;
+        }
+        .red {
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="red" onclick="changeColor()"></div>
+
+    <script>
+        let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        let i=0;
+        function changeColor(){
+            $('div').attr('class', `${colors[i]}`);
+            i++;
+            if(i==colors.length){
+                i=0;
+            }
+        }
+    </script>
+
+    <span class="span span1">span1</span>
+    <span class="span span2">span2</span>
+    <span class="span span3">span3</span>
+    <span class="span span4">span4</span>
+    <span class="span span5">span5</span>
+
+    <script>
+        const spans = document.querySelectorAll('.span');
+        function setcolor(){
+            let colorValue=Math.floor(Math.random()*100);
+            this.style.color='#eeee'+colorValue;
+        }
+        for(let span of spans){
+            $('.span').click(setcolor)
+        }
+    </script>
+</body>
+</html>
