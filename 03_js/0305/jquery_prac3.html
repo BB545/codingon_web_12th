@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        div:hover {
+            cursor: pointer;
+        }
+        .red {
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue" onclick="changeColor()"></div>
+
+    <script>
+        let colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        function changeColor(){
+            let currentClass = $('div').attr('class');
+            // console.log(currentClass)
+            let i = colors.indexOf(currentClass); //배열에서 몇번쨰에 있는가?
+            // console.log(i)
+
+            if(i==colors.length-1){
+                console.log('보라색입니다.')
+            }
+            else{
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+</html>
