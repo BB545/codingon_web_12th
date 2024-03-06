@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --div-main-color: gold;
+            /* 대명사로 메인 색 지정 */
+        }
+        div {
+            color: var(--div-main-color);
+            /* 대명사 이름으로 색 불러오기 -> 수정 편집이 쉬워짐 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        요소__일부분(underscore) : 요소의 일부분임을 표시
+        요소-상태 (대시 기호) : 요소의 상태 표시
+    </div>
+    <div class="container">
+        <div class="container__item">내용</div>
+        <div class="btn btn-sucess">성공</div>
+    </div>
+</body>
+</html>
