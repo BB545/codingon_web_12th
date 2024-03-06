@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header 만들기 실습</title>
+    <style>
+        #img {
+            width: 50px;
+            height: 50px;
+        }
+        @media screen and (min-width:768px) {
+            #img {
+                margin-top: 25px;
+            }
+            header {
+                background-color: aqua;
+                display: flex;
+                justify-content: space-around;
+                height: 100px;
+            }
+            .container {
+                display: flex;
+            }
+            .container>div {
+                margin: 0 5px;
+                font-weight: bold;
+                line-height: 100px;
+            }
+        }
+        @media screen and (max-width:768px) {
+            #img {
+                margin-top: 5px;
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
+            header {
+                position: relative;
+                background-color: aqua;
+                display: grid;
+                height: 60px;
+                width: 100vw;
+                justify-content: space-around;
+            }
+            .container>div{
+                background-color: aliceblue;
+                height: 60px;
+                width: 100vw;
+                text-align: center;
+                line-height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <svg id="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 210" fill="#FFF900"><path d="M111.64 140.2c-3.7 5.13-8.13 10.03-13.33 15.23-7.31 7.31-7.31 19.17 0 26.49 7.31 7.31 19.17 7.31 26.49 0C154.1 152.61 164 127.3 164 81.59c0-32.58-26.41-58.99-58.99-58.99s-59 26.41-59 58.99c0 34.95 30.34 62.57 65.63 58.61z"></path></svg>
+        <div class="container">
+            <div class="menu1">메뉴1</div>
+            <div class="menu2">메뉴2</div>
+            <div class="menu3">메뉴3</div>
+            <div class="menu4">메뉴4</div>
+        </div>
+    </header>
+</body>
+</html>
