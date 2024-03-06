@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t346si4gy_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum at nisi omnis tempora, esse voluptate dolorem aliquid laborum iusto! Enim laboriosam animi voluptatem sit quam numquam corporis. Nobis, alias autem.</p>
+    <script>
+        // 문서가 다 준비되면 안에 있는 함수를 실행해라
+        $(document).ready(function(){
+            resizeYoutube();
+        })
+        // 윈도우 사이즈가 변경되는 이벤트가 발생하면 안에 함수를 실행해라
+        $(window).on('resize', function(){
+            resizeYoutube();
+        })
+        function resizeYoutube() {
+            // iframe 각각에 함수를 실행해라
+            $('iframe').each(function(){
+                if(/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ) {
+                    $(this).css('width', '100%');
+                    $(this).css('height', Math.cell(parseInt($(this).css('width'))*480 / 854)+'px')
+                }
+            })
+        }
+    </script>
+</body>
+</html>
