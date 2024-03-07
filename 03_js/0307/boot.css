@@ -13,7 +13,10 @@ body::before {
     background-color: dodgerblue;
     border: 1px solid;
     min-height: 50px;
-    font-size: 2rem;
+    font-size: 1rem;
+    color: beige;
+    padding: 10px;
+    border-radius: 5px;
 }
 @media (min-width:576px) {
     body::before {
