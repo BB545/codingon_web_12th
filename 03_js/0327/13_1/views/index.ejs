@@ -10,6 +10,12 @@
     <div class="blogs content">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. In voluptatum vero, culpa necessitatibus tempore et repellendus quis, aspernatur corrupti distinctio cum reiciendis aliquid veniam deleniti placeat rerum ducimus nam recusandae!
     </div>
+
+    <!-- script태그는 줄단위로 작성해야한다. 내용에는 작성해줄 필요 없다 -->
+    <% for(var i=0; i<5; i++){ %> 
+        <h1>안녕</h1> 
+    <% } %>
+
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
