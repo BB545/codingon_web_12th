@@ -88,3 +88,10 @@ function sumTotal(a, ...b){
     return total*(1-a);
 }
 console.log(sumTotal(0.1,100,20))
+
+//6 reduce 함수 이용
+function sum2(discount, ...prices){
+    const total = prices.reduce((a,b) => a+b)
+    return total * ( 1 - discount);
+}
+console.log(sum2(0.1, 100, 20))
