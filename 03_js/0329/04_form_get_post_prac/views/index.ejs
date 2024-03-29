@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="get">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name">
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="get" value="남자"> 남자
+            <input type="radio" name="get" value="여자"> 여자
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="birthYear" id="year">
+                <% for(let i = 0; i < 50; i++) { %>
+                <option value="<%= 2010 - i %>"><%= 2010 - i  %></option>
+                <% } %>
+            </select> 년
+            <select name="birthYear" id="year">
+                <% for(let i = 1; i < 13; i++) { %>
+                <option value="<%= i %>"><%= i  %></option>
+                <% } %>
+            </select> 월
+            <select name="birthYear" id="year">
+                <% for(let i = 1; i < 32; i++) { %>
+                <option value="<%= i %>"><%= i  %></option>
+                <% } %>
+            </select> 일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="check1" value="여행"> 여행
+            <input type="checkbox" name="check2" value="패션"> 패션
+            <input type="checkbox" name="check2" value="음식"> 음식
+        </fieldset>
+        <br>
+        <button>회원가입</button>
+    </form>
+
+    <br>
+
+    <form action="/login" method="post">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name">
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="get" value="남자"> 남자
+            <input type="radio" name="get" value="여자"> 여자
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="birthYear" id="year">
+                <% for(let i = 0; i < 50; i++) { %>
+                <option value="<%= 2010 - i %>"><%= 2010 - i  %></option>
+                <% } %>
+            </select> 년
+            <select name="birthYear" id="year">
+                <% for(let i = 1; i < 13; i++) { %>
+                <option value="<%= i %>"><%= i  %></option>
+                <% } %>
+            </select> 월
+            <select name="birthYear" id="year">
+                <% for(let i = 1; i < 32; i++) { %>
+                <option value="<%= i %>"><%= i  %></option>
+                <% } %>
+            </select> 일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="check" value="여행"> 여행
+            <input type="checkbox" name="check" value="패션"> 패션
+            <input type="checkbox" name="check" value="음식"> 음식
+        </fieldset>
+        <br>
+        <button>회원가입</button>
+    </form>
+</body>
+</html>
