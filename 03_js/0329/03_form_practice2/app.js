@@ -13,9 +13,20 @@ app.get('/', (req,res)=>{
 })
 
 app.get('/login', (req,res)=>{
-    console.log('로그인 페이지에서 옴')
+    console.log('로그인GET 요청')
     console.log(req.query) //객체형태로 데이터 출력
-    res.render('result', {title:'로그인 화면', userInfo:req.query})
+    res.render('result', {title:'GET 로그인 화면', userInfo:req.query})
+})
+
+app.post('/login', (req,res)=>{
+    console.log('로그인 POST 요청')
+    console.log('req body--->', req.body) //객체형태로 데이터 출력
+    res.render('result', {title:'POST 로그인 화면', userInfo:req.body})
+})
+
+app.post('/js-form-check', (req,res)=>{
+    console.log(req.body) //객체형태로 데이터 출력
+    res.send('js validation 성공')
 })
 
 app.listen(8080, ()=>{
