@@ -10,6 +10,14 @@ app.get('/', (req,res)=>{
     res.render('index', {title:'HOME'})
 })
 
+app.get('/about', (req,res)=>{
+    res.render('about', {title:'About'})
+})
+
+app.get('/create', (req,res)=>{
+    res.render('create', {title: '작성하기'})
+})
+
 app.listen(PORT, ()=>{
     console.log(`Server is running ${PORT}`)
 })
