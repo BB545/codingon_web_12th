@@ -28,8 +28,12 @@
         <br><br>
         <button type="button" onclick="ajaxGet()">Ajax Get 제출하기</button>
         <button type="button" onclick="ajaxPost()">Ajax Post 제출하기</button>
+        <br>
         <button type="button" onclick="axiosGet()">Axios Get 제출하기</button>
         <button type="button" onclick="axiosPost()">Axios Post 제출하기</button>
+        <br>
+        <button type="button" onclick="fetchGet()">Fetch Get 제출하기</button>
+        <button type="button" onclick="fetchPost()">Fetch Post 제출하기</button>
 
         <!-- 결과를 보여주는 곳 -->
         <div class="result"></div>
@@ -113,6 +117,46 @@
             }).catch((err)=>{
                 console.log('ERROR');
                 resultBox.textContent=`Post/axios 요청 실패 ${err.response.data}`
+            })
+        }
+
+        //fetch get
+        function fetchGet(){
+            const resultBox = document.querySelector('.result');
+            const form = document.forms['register'];
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value
+            }
+            fetch(`/fetch?name=${data.name}&gender=${data.gender}`, {
+                method:'GET'
+            }).then((response)=>{
+                return response.json()
+            }).then(data=>{
+                console.log('DATA : ', data);
+                resultBox.textContent=`Get/fetch 요청 완료 ${data.name}님의 성별은 ${data.gender}입니다.`
+            })
+        }
+
+        //fetch post
+        function fetchPost(){
+            const resultBox = document.querySelector('.result');
+            const form = document.forms['register'];
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value
+            }
+            fetch('/fetch', {
+                method:'POST',
+                headers: {'Content-Type':'application/json'}, //차이점
+                body: JSON.stringify(data)
+            }).then((response)=>{
+                return response.json()
+            }).then(data=>{
+                console.log('DATA : ', data);
+                resultBox.textContent=`Post/fetch 요청 완료 ${data.name}님의 성별은 ${data.gender}입니다.`
+            }).catch(err=>{
+                console.log('ERROR', err,massage);
             })
         }
     </script>
