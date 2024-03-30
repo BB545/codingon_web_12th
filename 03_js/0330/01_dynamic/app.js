@@ -22,7 +22,16 @@ app.post('/ajax',(req,res)=>{
     res.send(req.body)
 })
 
+//axios
+app.get('/axios', (req,res)=>{
+    console.log(req.query);
+    res.send(req.query)
+})
 
+app.post('/axios', (req,res)=>{
+    console.log(req.body);
+    res.send(req.body)
+})
 
 app.listen(8000,()=>{
     console.log('8000포트에서 서버 실행');
