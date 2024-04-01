@@ -11,6 +11,22 @@ app.get('/', (req,res)=>{
     res.render('index')
 })
 
+app.get('/practice1',(req,res)=>{
+    res.render('practice1')
+})
+
+app.get('/practice2',(req,res)=>{
+    res.render('practice2')
+})
+
+app.get('/practice', (req,res)=>{
+    res.send(req.query)
+})
+
+app.post('/practice', (req,res)=>{
+    res.send(req.body)
+})
+
 //ajax 요청들
 app.get('/ajax',(req,res)=>{
     console.log(req.query);
