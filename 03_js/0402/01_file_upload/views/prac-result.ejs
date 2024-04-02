@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container_profile {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_profile">
+        <img src="/uploads/<%= filename %>">
+        <h3><%= id %>님 환영합니다!</h3>
+        <span>비밀번호: <%= pw %></span><br>
+        <span>이름: <%= name %></span><br>
+        <span>나이: <%= age %></span><br>
+    </div>
+</body>
+</html>
+</body>
+</html>
