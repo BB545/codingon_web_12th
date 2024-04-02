@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Result</h1>
+
+    <p>파일 갯수 <%= filecount %></p>
+    <p>첫번째 파일 <%= filenames[0].filename %></p>
+    <!-- 지정된 경로는 ejs문법 밖에 적어준다 -->
+    <% for (let i=0; i<filecount; i++){ %>
+        <img src="/download/<%= filenames[i].filename %>">
+    <% } %>
+</body>
+</html>
