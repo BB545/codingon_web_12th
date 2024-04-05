@@ -13,14 +13,17 @@ const conn = mysql.createConnection({
 })
 
 app.get('/',(req,res)=>{
-    let sql = 'select * from customer';
-    conn.query(sql, function(err, rows, fields){
+    // var sql = 'select * from customer';
+    var sql = 'insert into customer (custid, custname, addr, phone, birth) value (?,?,?,?,?)';
+    var values = ['peach', '홍길동', '마포구에 살아요', '01011111', '2024-04-05']
+    conn.query(sql, values, function(err, rows, fields){
         if(err){
             console.log('연결실패');
             res.status(500).send('Internal Server Error')
-        } else {
-            res.render('index', {mydata: rows})
-        }
+        } 
+        //else {
+            // res.render('index', {mydata: rows})
+        //}
     })
 })
 
