@@ -20,7 +20,7 @@ function createVisitor(){
             name: form.name.value,
             comment: form.comment.value
         }
-    }).then(rew=>{
+    }).then(res=>{
         console.log('/static/visitor.js ==> res', res.data);
         const data = res.data;
         const html = `
