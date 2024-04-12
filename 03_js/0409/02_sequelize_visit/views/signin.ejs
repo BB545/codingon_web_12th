@@ -20,8 +20,39 @@
     <a href="/user/signup">회원가입</a>
 
     <script>
-        function login(){
-            
+        async function login(){
+            const form_login = document.forms['form_login'];
+            if(!form_login.checkValidity()){
+                form_login.reportValidity()
+                return;
+            }
+            try{
+                console.log("--------")
+                let res= await axios({
+                    method:'post',
+                    url:'/user/signin',
+                    data :{
+                        userid : form_login.userid.value,
+                        pw : form_login.pw.value
+                    }
+                })
+                console.log('get방식 로그인 > 폼에서 내용가져옴' , res.data)
+                const { data }= res;
+                if(data.isLogin) {
+                    alert('성공');
+                    const form_info = document.forms['form_info'];
+                    form_info.userid.value = form_login.userid.value; 
+                    alert('form info ')
+                    // form_info 제출 : post /user/porfile 폼 전송
+                    form_info.submit();
+                } else{
+                    alert('실패');
+                    form_login.reset();
+                }
+            } catch(err){
+                console.log(err)
+
+            }
         }
     </script>
 </body>

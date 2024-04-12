@@ -24,7 +24,26 @@
 
     <script>
         function register(){
-
+            alert('로그인 폼 register함수')
+            const form=document.forms['form_register'];
+            if(!form.checkValidity()){
+                form.reportValidity()
+                return
+            }
+            axios({
+                method: 'post' ,
+                url:'/user/signup'  ,
+                data: {
+                userid:  form.userid.value,
+                    pw: form.pw.value,
+                    name : form.name.value
+                }
+            }).then(res=>{
+                console.log('회원가입 ? axios > res 받아옴')
+                alert('회원가입 성공')
+                document.location.href='/user/signin'
+                // 다른 경로로 다시 보내겠다.
+            })
         }
     </script>
 </body>
