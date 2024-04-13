@@ -1,0 +1,39 @@
+@server=http://localhost:8000
+@playerId = 1
+
+### 전체선수조회
+GET {{server}}/players
+
+### 전체 팀 조회
+GET {{server}}/teams
+
+### 모든 경기 조회
+GET {{server}}/teamgames
+
+### 특정 선수 조회(params)
+GET {{server}}/players/{{playerId}}
+
+### 이름 순으로 전체 팀 조회(query)
+GET {{server}}/teams?sort=name_asc
+@teamId = 3
+
+### 특정 팀 조회(params)
+GET {{server}}/teams/{{teamId}}
+
+### 특정 팀의 모든 선수 조회(params)
+GET {{server}}/teams/{{teamId}}/players
+
+### 선수 추가
+POST {{server}}/players
+Content-Type: application/json; charset=UTF-8
+{
+  "name": "손흥민축구선수",
+  "age": 31,
+  "teamid": 2
+}
+
+### 이름으로 팀 검색(query)
+GET {{server}}/teams?search=KT
+
+### 특정 선수 삭제 (Player, Profile 연쇄 삭제)(parmas)
+DELETE {{server}}/players/{{playerId}}

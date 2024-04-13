@@ -52,7 +52,7 @@ GameModel.belongsToMany(TeamModel, {
 })
 
 db.Player = PlayerModel;
-db.Profile = PlayerModel;
+db.Profile = ProfileModel;
 db.Game = GameModel;
 db.Team = TeamModel;
 db.TeamGame = TeamGameModel;

@@ -21,12 +21,13 @@ exports.getAllPlayer = async (req,res)=>{
 //특정 선수 조회 /players/:playerId
 exports.getPlayer = async (req,res)=>{
     try{
-        console.log(req.params);
         const { playerId } = req.params;
-        const Player = await Player.findOne({
+        const player = await Player.findOne({
             where: { player_id: playerId },
             include: [{ model: Profile, attributes: ['position', 'salary'] }]
         })
+        console.log(req.params);
+        res.json(player)
     } catch(err){
         console.log('err:', err);
         res.status(500).send('server error')
@@ -150,6 +151,7 @@ exports.getTeam = async (req, res) => {
 //특정 팀의 모든 선수 조회, GET /teams/:teamId/players
 exports.getTeamPlayers = async (req, res) => {
     try {
+        const { teamId } = req.params;
       const teamPlayers = await Team.findOne({
         where: { team_id: teamId },
         include: [{ model: Player }],

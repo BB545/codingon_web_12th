@@ -4,7 +4,7 @@ const controller = require('../controller/Cmain');
 
 router.get('/', controller.main);
 router.get('/players', controller.getAllPlayer);
-router.get('/player/:playerId', controller.getPlayer);
+router.get('/players/:playerId', controller.getPlayer);
 
 router.post('/players', controller.postPlayer);
 
