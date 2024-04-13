@@ -13,7 +13,7 @@ insert into game(date, location, createdAt, updatedAt) values
   ('2023-10-1', 'seoul', now(), now()),
   ('2023-10-3', 'london', now(), now()),
   ('2023-10-5', 'la', now(), now());
-insert into teamgame(team_id, game_id, createdAt, updatedAt) values
+insert into teamgames(team_id, game_id, createdAt, updatedAt) values
   (1, 1, now(), now()),
   (2, 1, now(), now()),
   (2, 2, now(), now()),
@@ -42,4 +42,4 @@ select * from player;
 select * from profile;
 select * from team;
 select * from game;
-select * from teamgame;
+select * from teamgames;
