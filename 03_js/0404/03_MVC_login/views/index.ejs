@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form action="/login" method="post" name="login">
+        <h2>post 요청</h2>
+        <label for="id">ID
+            <input type="text" name="id" id="id" placeholder="ID" required>
+        </label>
+        
+        <br />
+        <br />
+
+        <label for="pw">PW
+            <input type="password" name="pw" id="pw" placeholder="PW" required>
+        </label>
+
+        <br />
+        <br />
+
+        <button type="button" onclick="axiosPost()">로그인</button>
+
+        <br />
+        <br />
+
+        <div class="result"></div>
+    </form>
+
+    <script>
+        async function axiosPost(){
+            const resultBox = document.querySelector('.result');
+            const form = document.forms['login'];
+            const data = {
+                id: form.id.value,
+                pw: form.pw.value
+            }
+            try{
+                if(!form.id.checkValidity()){
+                    resultBox.textContent='아이디를 입력하세요.'
+                } else if(!form.pw.checkValidity()){
+                    resultBox.textContent='비밀번호를 입력하세요.'
+                } else {
+                    const response = await axios({
+                            method: 'post',
+                            url: '/axios',
+                            params: data
+                        }
+                    )
+                    const {id,pw} = response.data;
+                    resultBox.textContent=`Post/axios 로그인 성공 아이디는 ${data.id} 비밀번호는 ${data.pw}입니다.`
+                }
+            } catch(err){
+                console.log('ERROR');
+                resultBox.textContent=`Post/axios 로그인 실패 일치하는 로그인 정보가 없습니다`
+            }
+        }
+    </script>
+</body>
+</html>
