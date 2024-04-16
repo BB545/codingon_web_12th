@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('include', {title: 'Login'})%>
     <style>
         .login-box {
           width: 20rem;
@@ -21,7 +19,6 @@
     </style>
 </head>
 <body>
-    <%- include('header') %>
     <div class="login-box">
         <h1>로그인</h1>
         <p>참고! 아이디: <b>banana</b> <br>
