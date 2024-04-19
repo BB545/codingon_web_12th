@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = 8000;
-const SECRET = '9PBYbnIhfXEVQdeXrvPWrX6ydDAJkIqVdfjfsahf';
+// SECRET 키값 넣어주기
 
 app.set('view engine', 'ejs');
 app.set('views', './views')
