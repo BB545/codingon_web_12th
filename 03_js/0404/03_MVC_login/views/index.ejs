@@ -49,15 +49,19 @@
                     const response = await axios({
                             method: 'post',
                             url: '/axios',
-                            params: data
+                            data: data
                         }
-                    )
-                    const {id,pw} = response.data;
-                    resultBox.textContent=`Post/axios 로그인 성공 아이디는 ${data.id} 비밀번호는 ${data.pw}입니다.`
+                    ).then(response=>{
+                        if (response.data.response===false) {
+                            resultBox.textContent = 'Post/axios 로그인 실패 일치하는 로그인 정보가 없습니다.';
+                        } else {
+                            resultBox.textContent = `Post/axios 로그인 성공 아이디는 ${data.id} 비밀번호는 ${data.pw}입니다.`;
+                        }
+                    })
                 }
             } catch(err){
                 console.log('ERROR');
-                resultBox.textContent=`Post/axios 로그인 실패 일치하는 로그인 정보가 없습니다`
+                resultBox.textContent = '알 수 없는 에러 발생';
             }
         }
     </script>
