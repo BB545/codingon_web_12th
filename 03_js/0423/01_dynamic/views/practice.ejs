@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="register">
+        <label for="username">이름</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="male" value="male" checked>
+            <label for="male">남자</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">여자</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>생년월일</legend>
+            <label for="year">년</label>
+            <select name="birthYear" id="year">
+                <% for(let i=0; i<25; i++){ %>
+                    <option value="<%= 2024 - i %>"><%= 2024 - i %></option>
+                <% } %>
+            </select>
+
+            <label for="month">월</label>
+            <select name="birthMonth" id="month">
+                <% for(let i=1; i<13; i++){ %>
+                    <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select>
+
+            <label for="day">일</label>
+            <select name="birthDay" id="day">
+                <% for(let i=1; i<32; i++){ %>
+                    <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>관심사</legend>
+            <label for="travel">여행</label>
+            <input type="checkbox" name="hobby" id="travel" value="travel" checked>
+
+            <label for="fashion">패션</label>
+            <input type="checkbox" name="hobby" id="fashion" value="fashion">
+
+            <label for="food">음식</label>
+            <input type="checkbox" name="hobby" id="food" value="food">
+        </fieldset>
+
+        <button type="button" onclick="clickRegister()">회원가입</button>
+    </form>
+    <hr>
+
+    <div class="register-result"></div>
+
+    <script>
+        const registerResult = document.querySelector('.register-result');
+
+        function clickRegister(){
+            const form = document.forms['register'];
+            console.log('form 입력값 확인', form.username.value);
+
+            const hobbies = Array.from(form.hobby).filter(elem=>elem.checked === true).map(elem=>elem.value);
+
+            console.log('hobby중 사용자가 체크한 것들', hobbies);
+
+            const data = {
+                username: form.username.value,
+                gender: form.gender.value,
+                birthYear: form.birthYear.value,
+                birthMonth: form.birthMonth.value,
+                birthDay: form.birthDay.value,
+                hobby: hobbies,
+            }
+
+            axios({
+                method: 'get',
+                url: '/axios',
+                params: data
+            }).then(res=>{
+                console.log(res.data);
+
+                const {
+                    username,
+                    gender,
+                    birthYear,
+                    birthMonth,
+                    birthDay,
+                    hobby
+                } = res.data;
+
+                registerResult.textContent = `${username}님 환영합니다! 가입완료! 생년월일은 ${birthYear}년 ${birthMonth}월 ${birthDay}일! 취미는 ${hobby}`
+            })
+        }
+    </script>
+</body>
+</html>
