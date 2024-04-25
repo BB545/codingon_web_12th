@@ -21,6 +21,7 @@ function createVisitor(){
             comment: form.comment.value
         }
     }).then(res=>{
+        console.log(res);
         const data = res.data;
         const html = `
             <tr id="tr_${data.id}">
@@ -93,6 +94,6 @@ function deleteVisitor(obj, id){
         url: '/visitordelete',
         data: {id: id}
     }).then(res=>{
-        obj.closet(`#tr_${id}`).remove()
+        obj.closest(`#tr_${id}`).remove()
     })
 }

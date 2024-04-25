@@ -19,7 +19,7 @@ exports.postAddVisitor = (data, cb)=>{
     const values = [data.name, data.comment];
     conn.query(sql, values, (err,rows)=>{
         console.log('폼에서 보내준 데이터 추가');
-        cb(rows.insertid)
+        cb(rows.insertId)
     });
 }
 

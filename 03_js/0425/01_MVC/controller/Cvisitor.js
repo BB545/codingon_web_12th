@@ -13,7 +13,9 @@ exports.allVisitorList = (req,res)=>{
 
 exports.addVisitor = (req,res)=>{
     const {name, comment} = req.body;
+    console.log(req.body);
     Visitor.postAddVisitor(req.body, (result)=>{
+        console.log(result, name, comment);
         res.send({id: result, name, comment})
     })
 }
@@ -32,6 +34,7 @@ exports.patchVisitor = (req,res)=>{
 
 exports.deleteVisitor = (req,res)=>{
     Visitor.deletedb(req.body.id, (result)=>{
+        console.log(req.body.id);
         res.send('삭제 완료')
     })
 }
