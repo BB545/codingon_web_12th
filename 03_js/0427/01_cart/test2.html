@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = ['토마토', '사과', '배'];
+
+        console.log(arr.join());
+        console.log(arr.join(''));
+        // -를 이용하면 문자열로 구분해 새 문자열로 반환
+        console.log(arr.join('-'));
+    </script>
+
+    <script>
+        // json - parse
+        const json = '{"result": true, "count": 42}';
+        const obj = JSON.parse(json);
+        // 문자열을 객체 형태로 구문분석해 value 값 출력
+        console.log(obj.count);
+        console.log(obj.result);
+    </script>
+</body>
+</html>
