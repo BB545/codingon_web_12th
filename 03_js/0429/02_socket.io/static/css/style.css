@@ -1,0 +1,49 @@
+#main {
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: lightblue;
+    text-align: center;
+    width: 500px;
+    height: 800px;
+}
+
+#chat {
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.connect {
+    width: 90%;
+    margin: auto;
+    background-color: aquamarine;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.disconnect {
+    width: 90%;
+    margin: auto;
+    background-color: indianred;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* 내가 메세지 보낼 때 */
+.me {
+    width: 90%;
+    margin: auto;
+    background-color: lemonchiffon;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* 상대방이 메세지 보낼 때 */
+.other {
+    width: 90%;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
