@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>coffee</li>
+        <li>milk</li>
+        <!-- <li>Tea</li> 추가하기 위해선 li 엘리먼트, text 노드 필요 -->
+    </ul>
+    <button onclick="myF()">추가하기</button>
+
+    <script>
+        function myF(){
+            const node = document.createElement('li');
+            const textnode = document.createTextNode('Tea');
+            // DOM은 형성할 때 노드들로 구성되어 있다.
+            // <li>내용</li> => 엘리먼트 노드 + 글자 노드로 구분
+            node.appendChild(textnode);
+            document.getElementById('myList').appendChild(node);
+        }
+    </script>
+</body>
+</html>
