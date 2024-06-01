@@ -8,9 +8,8 @@ import ExAll from './components/ExAll';
 function App() {
   return (
     <div className="App">
-      <Select />
+      {/* <Select /> */}
       <Input />
-      <Result />
 
       <hr />
       <ExAll />
