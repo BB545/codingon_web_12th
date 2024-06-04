@@ -3,6 +3,7 @@ import './App.css';
 import HandlerEx3 from './HandlerEx3';
 import PracticeEx from './PracticeEx';
 import PracticeEx2 from './PracticeEx2';
+import PracticeEx2Sol from './PracticeEx2Sol';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <PracticeEx />
       <hr />
       <PracticeEx2 />
+      <hr />
+      <PracticeEx2Sol />
     </div>
   );
 }
