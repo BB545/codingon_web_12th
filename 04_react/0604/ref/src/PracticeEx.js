@@ -33,6 +33,8 @@ export default class PracticeEx extends Component {
             })
 
             this.setState({ data: newInform })
+            this.writerInput.current.value = '';
+            this.titleInput.current.value = '';
         }
     }
 
