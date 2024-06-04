@@ -2,6 +2,8 @@ import './App.css';
 import PracticeEx from './PracticeEx';
 import RefSample1 from './RefSample1';
 import RefSample2 from './RefSample2';
+import RefSample3 from './RefSample3';
+import RefSample4 from './RefSample4';
 
 function App() {
   return (
@@ -11,6 +13,10 @@ function App() {
       <RefSample2 />
       <hr />
       <PracticeEx />
+      <hr />
+      <RefSample3 />
+      <hr />
+      <RefSample4 />
     </div>
   );
 }
