@@ -1,6 +1,7 @@
 import './App.css';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';
+import PostList from './PostList';
 import PracticeEx from './PracticeEx';
 import PracticeEx2 from './PracticeEx2';
 
@@ -14,6 +15,8 @@ function App() {
       <PracticeEx />
       <hr />
       <PracticeEx2 />
+      <hr />
+      <PostList />
     </div>
   );
 }
