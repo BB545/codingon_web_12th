@@ -1,0 +1,43 @@
+// 믹스인을 모아두는 곳
+
+// - 믹스인 선언 -> 함수 정의
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin position($top, $left) {
+    top: $top;
+    left: $left;
+}
+
+@mixin circle($move) {
+    @keyframes circle#{$move} {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        25% {
+            transform: translate($move, 0);
+        }
+
+        50% {
+            transform: translate($move, $move);
+        }
+
+        75% {
+            transform: translate(0, $move);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    animation: circle#{$move} 2s infinite linear;
+}
+
+@mixin square($width, $height) {
+    width: $width;
+    height: $height;
+}

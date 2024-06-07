@@ -1,0 +1,40 @@
+@import './utils';
+@import './variables';
+
+.container3 {
+    position: relative;
+    @include position(700px, 0px);
+
+    .header {
+        @include square(100%, 50px);
+        background-color: $color-six;
+        color: $color-seven;
+        text-align: center;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    .item {
+        @include square(800px, 115px);
+        background-color: $color-eight;
+        border-radius: 15px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        .black {
+            font-size: 15px;
+        }
+
+        .grey {
+            @extend .black;
+            color: $color-nine;
+
+            .blue {
+                color: $color-six;
+            }
+        }
+    }
+}
