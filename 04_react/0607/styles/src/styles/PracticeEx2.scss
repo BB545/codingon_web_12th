@@ -1,0 +1,31 @@
+@import './utils';
+@import './variables';
+
+.container2 {
+    position: relative;
+    @include position(500px, 0px);
+
+    .circle {
+        @include box(50px);
+        position: absolute;
+        border-radius: 50%;
+
+        &.pink {
+            @include position(0px,0px);
+            background-color: $color-five;
+            @include circle(10px);
+        }
+
+        &.yellow {
+            @include position(50px,0px);
+            background-color: $color-third;
+            @include circle(20px);
+        }
+
+        &.green {
+            @include position(100px,0px);
+            background-color: $color-four;
+            @include circle(30px);
+        }
+    }
+}
