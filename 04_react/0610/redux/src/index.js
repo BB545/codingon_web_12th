@@ -11,6 +11,7 @@ import App3 from './App3';
 
 import { composeWithDevTools } from '@redux-devtools/extension';
 import PracticeEx from './PracticeEx';
+import PracticeExSol from './PracticeExSol';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -20,10 +21,11 @@ root.render(
   <React.StrictMode>
     {/* 전체 프로젝트에서 하나의 스토어 사용 가능해짐 */}
     <Provider store={store}>
-      <App />
+      {/* <App />
       <App2 />
       <App3 />
-      <PracticeEx />
+      <PracticeEx /> */}
+      <PracticeExSol />
     </Provider>
   </React.StrictMode>
 );
