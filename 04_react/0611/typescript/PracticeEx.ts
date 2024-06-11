@@ -32,3 +32,23 @@ let heroGame_B: Game = {
     category: '롤플레잉',
     platform: '모바일',
 }
+
+// 함수 선언 실습
+function sum1(a: number, b: number) {
+    console.log(a + b);
+}
+
+sum1(5, 11);
+
+function sum2(...a: number[]): number {
+    let sum = 0;
+    // a.map((i) => {
+    //     sum += i
+    // })
+    a.forEach((i) => {
+        sum += i
+    })
+    return sum
+}
+
+console.log(sum2(1, 2, 3, 4, 10));
