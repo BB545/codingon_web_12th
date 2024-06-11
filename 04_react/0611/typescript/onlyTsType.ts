@@ -54,3 +54,81 @@ val = { number: 100 };
 let val2;
 val2 = false;
 val2 = '하이';
+
+
+// Interface
+interface Student {
+    name: string,
+    isPassed: boolean,
+}
+
+const Student1: Student = {
+    name: 'codingon',
+    isPassed: true,
+    // addr: 'string', // 타입에 없는 값 넣으려 하면 에러
+}
+
+// type : 지정해둔 값 이외의 값이 들어오면 에러
+type Score = 'A+' | 'A' | 'B' | 'C';
+let score1: Score = 'A';
+// let score2: Score = 'D'; // error
+
+type Score2 = 100 | 90 | 80;
+let score2: Score2 = 80;
+
+// type vs enum
+enum Score3 {
+    A = 100,
+    B = 90,
+    C = 80,
+}
+
+// enum
+console.log(Score3.A);
+// type은 바로 값을 적으면 된다.
+
+
+// interface 상속
+interface BaseBallClub extends Student {
+    position: string;
+    height: number;
+    readonly backNumber?: number; // ? : 있어도 되고, 없어도 된다는 의미
+    [grade: number]: Score3
+}
+
+const player1: BaseBallClub = {
+    name: 'otani',
+    isPassed: true,
+    position: 'pitcher',
+    height: 190,
+    // backNumber: 17,
+    1: Score3.A, // 학년: 점수
+    // 2: 'A', // error Score3에 없는 값을 쓰고 있으므로 에러
+}
+
+console.log(player1)
+player1.position = '투수';
+player1['height'] = 180; // 키값으로도 접근 가능
+// player1.backNumber = 188; // error : readonly이기 때문에 수정불가
+
+// 교차 타입 : 두개 이상 타입을 합치는 것
+interface Toy {
+    name: string;
+    start(): void; // 함수도 들어갈 수 있음
+}
+
+interface Car {
+    name: string;
+    color: string;
+    price: number;
+}
+
+type ToyCar = Toy & Car;
+const toyCar: ToyCar = {
+    name: 'tayo',
+    start(){
+        console.log('출발~');
+    },
+    color: 'blue',
+    price: 5000,
+}
