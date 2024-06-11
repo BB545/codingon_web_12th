@@ -40,3 +40,41 @@ function printSome2<T, U>(x: T, y: U) {
     console.log(x, y);
 }
 printSome2<string, number>('1', 100);
+
+
+// interface & generic
+interface Phone<T> {
+    company: string;
+    createdAt: Date;
+    option: T;
+}
+
+type iphoneOption = {
+    color: string;
+    storage: number;
+}
+
+const iphone15: Phone<iphoneOption> = {
+    company: 'apple',
+    createdAt: new Date(),
+    option: {
+        color: 'white',
+        storage: 128,
+    },
+}
+console.log(iphone15);
+
+type galaxyOption = {
+    color: string;
+    isBuz: boolean;
+}
+
+const galaxy24: Phone<galaxyOption> = {
+    company: 'samsung',
+    createdAt: new Date(),
+    option: {
+        color: 'white',
+        isBuz: true,
+    },
+}
+console.log(galaxy24);
