@@ -52,3 +52,15 @@ function sum2(...a: number[]): number {
 }
 
 console.log(sum2(1, 2, 3, 4, 10));
+
+// generic 실습
+function arrElement<T>(arr: T[], idx: number): boolean | T {
+    if (idx >= arr.length) {
+        return false
+    } else {
+        return arr[idx]
+    }
+}
+console.log(arrElement<string>(["a", "b", "c"], 1));
+console.log(arrElement<string>(["a"], 1));
+console.log(arrElement<string>(["a"], 0));
