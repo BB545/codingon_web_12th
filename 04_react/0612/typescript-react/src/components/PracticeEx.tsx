@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PracticeItem from './PracticeItem';
+import { Post } from '../types/types';
 
-interface PostInfo {
-    id: number;
-    title: string;
-}
+// interface PostInfo {
+//     id: number;
+//     title: string;
+// }
 
 export default function PracticeEx() {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<Post[]>([]);
 
     useEffect(() => {
         const getPosts = async () => {
@@ -26,7 +27,7 @@ export default function PracticeEx() {
         <div className='PostList'>
             <header>Post List</header>
             {posts.length > 0 ? (
-                posts.map((post: PostInfo) => {
+                posts.map((post) => {
                     return <PracticeItem key={post.id} post={post} />;
                 })
             ) : (
